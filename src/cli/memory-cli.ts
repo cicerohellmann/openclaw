@@ -16,6 +16,7 @@ import { colorize, isRich, theme } from "../terminal/theme.js";
 import { shortenHomeInString, shortenHomePath } from "../utils.js";
 import { formatErrorMessage, withManager } from "./cli-utils.js";
 import { formatHelpExamples } from "./help-format.js";
+import { registerDurableMemoryCli } from "./memory-durable-cli.js";
 import { withProgress, withProgressTotals } from "./progress.js";
 
 type MemoryCommandOptions = {
@@ -759,4 +760,6 @@ export function registerMemoryCli(program: Command) {
         });
       },
     );
+
+  registerDurableMemoryCli(memory);
 }
